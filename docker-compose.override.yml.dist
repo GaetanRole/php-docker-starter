@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+
+  nginx:
+    ports:
+      - "8082:80"
+
+  php:
+    environment:
+      PHP_IDE_CONFIG: serverName={{e.g.docker-starter}}
+      XDEBUG_CONFIG: remote_host={{your-ip}}

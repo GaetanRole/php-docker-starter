@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+
+  nginx:
+    container_name: jobs_nginx
+    build: ./docker/nginx
+    working_dir: /srv
+    restart: on-failure
+    volumes:
+      - ./app/public:/srv/public:ro
+    depends_on:
+      - php
+
+  php:
+    container_name: jobs_php
+    build: ./docker/php
+    working_dir: /srv
+    restart: on-failure
+    volumes:
+      - ./:/srv

@@ -1,0 +1,15 @@
+###> General (MacOS, PHPStorm...) ###
+.idea/*
+.DS_Store
+.AppleDouble
+.LSOverride
+###< General (MacOS, PHPStorm...) ###
+
+###> composer ###
+/vendor/
+###< composer ###
+
+###> phpunit ###
+.phpunit
+.phpunit.xml
+###< phpunit ###
