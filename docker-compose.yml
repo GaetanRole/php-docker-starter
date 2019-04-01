@@ -1,21 +1,20 @@
-version: "3"
+# File syntax : https://docs.docker.com/compose/compose-file/
+# Global config, you can add your <ENV>.yml to override this one with -f option.
+
+version: "3.6"
 
 services:
 
-  nginx:
-    container_name: jobs_nginx
+  http:
     build: ./docker/nginx
+    container_name: nginx
     working_dir: /srv
-    restart: on-failure
-    volumes:
-      - ./app/public:/srv/public:ro
+    restart: always
     depends_on:
       - php
 
   php:
-    container_name: jobs_php
     build: ./docker/php
+    container_name: php
     working_dir: /srv
-    restart: on-failure
-    volumes:
-      - ./:/srv
+    restart: always

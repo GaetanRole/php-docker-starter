@@ -1,12 +1,19 @@
-version: "3"
+# File syntax : https://docs.docker.com/compose/compose-file/
+# This file is useful for development environment
+
+version: "3.6"
 
 services:
 
-  nginx:
+  http:
+    volumes:
+      - "./app/public:/srv/public:ro"
     ports:
-      - "8082:80"
+      - "8080:80"
 
   php:
+    volumes:
+      - "./:/srv"
     environment:
-      PHP_IDE_CONFIG: serverName={{e.g.docker-starter}}
-      XDEBUG_CONFIG: remote_host={{your-ip}}
+      - PHP_IDE_CONFIG="serverName=<YOUR_PHPSTORM_SERVER_NAME>"
+      - XDEBUG_CONFIG="remote_host=<YOUR_HOST_IP>"

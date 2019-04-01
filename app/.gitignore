@@ -1,15 +1,8 @@
-###> General (MacOS, PHPStorm...) ###
-.idea/*
-.DS_Store
-.AppleDouble
-.LSOverride
-###< General (MacOS, PHPStorm...) ###
-
-###> composer ###
+###> symfony/framework-bundle ###
 /vendor/
-###< composer ###
+###< symfony/framework-bundle ###
 
-###> phpunit ###
+###> symfony/phpunit-bridge ###
 .phpunit
-.phpunit.xml
-###< phpunit ###
+/phpunit.xml
+###< symfony/phpunit-bridge ###

@@ -3,12 +3,12 @@
 namespace App;
 
 /**
- * Class SomeClass
+ * @author Gaëtan Rolé-Dubruille <gaetan.role-dubruille@sensiolabs.com>
  */
 class SomeClass
 {
     /**
-     * @return string
+     * @return string A string to compare in unit test
      */
     public function getClassName(): string
     {

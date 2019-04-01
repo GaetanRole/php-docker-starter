@@ -6,8 +6,8 @@ use App\SomeClass;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Class SomeClassTest
- * @package App\Tests
+ * This class is just here to show PHPUnit remote debugging
+ * @author Gaëtan Rolé-Dubruille <gaetan.role-dubruille@sensiolabs.com>
  */
 class SomeClassTest extends TestCase
 {

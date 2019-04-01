@@ -1,15 +1,11 @@
-###> General (MacOS, PHPStorm...) ###
+### General (Docker, MacOS, PHPStorm...)
 .idea/*
+docker-compose.override.yml
 .DS_Store
 .AppleDouble
 .LSOverride
-###< General (MacOS, PHPStorm...) ###
-
-###> Docker ###
-docker-compose.override.yml
-###< Docker ###
 
 ###> friendsofphp/php-cs-fixer ###
-/.php_cs
-/.php_cs.cache
+.php_cs
+.php_cs.cache
 ###< friendsofphp/php-cs-fixer ###
