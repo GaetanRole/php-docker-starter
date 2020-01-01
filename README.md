@@ -1,8 +1,8 @@
 # Simple Docker starter using a PHP stack
-> Dockerized your web environment using PHP7.3, NGINX, COMPOSER, PHPUNIT, PHP-CS-FIXER, XDEBUG.
+> Dockerized your web environment using PHP7.4, NGINX, COMPOSER, PHPUNIT, PHP-CS-FIXER, XDEBUG.
 
 
-![Software License](https://img.shields.io/badge/php-%5E7.3-brightgreen.svg)
+![Software License](https://img.shields.io/badge/php-%5E7.4-brightgreen.svg)
 
 [![Author](https://img.shields.io/badge/author-gaetan.role--dubruille%40sensiolabs.com-blue.svg)](https://github.com/gaetanrole)
 
@@ -12,12 +12,12 @@ This repository uses official [PHP](https://hub.docker.com/_/php) and [NGINX](ht
 
 ### Contents
 
-- [PHP-FPM 7.3](https://hub.docker.com/_/php)
-- [NGINX 1.15](https://hub.docker.com/_/nginx)
-- [Composer 1.8](https://getcomposer.org/)
+- [PHP-FPM 7.4](https://hub.docker.com/_/php)
+- [NGINX 1.17](https://hub.docker.com/_/nginx)
+- [Composer 1.9](https://getcomposer.org/)
 - [PHPunit 7.5](https://phpunit.de/)
 - [PHP-CS-FIXER-V2](https://github.com/FriendsOfPHP/PHP-CS-Fixer)
-- [Xdebug 2.7](https://xdebug.org/)
+- [Xdebug 2.9](https://xdebug.org/)
 
 ### Project requirements
 
