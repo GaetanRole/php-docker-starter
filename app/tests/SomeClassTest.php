@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Tests;
 
 use App\SomeClass;
@@ -13,6 +15,6 @@ class SomeClassTest extends TestCase
 {
     public function testIfGetClassNameReturnTheGoodOne(): void
     {
-        TestCase::assertSame('SomeClass', (new SomeClass())->getClassName());
+        self::assertSame('SomeClass', (new SomeClass())->getClassName());
     }
 }

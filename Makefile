@@ -1,12 +1,29 @@
 # Makefile focusing on Docker
 
 DOCKER_COMPOSE		= docker-compose
+EXEC				= $(DOCKER_COMPOSE) exec -T php /usr/bin/entrypoint
+
+##
+###------------#
+###    Help    #
+###------------#
+##
+
+.DEFAULT_GOAL := 	help
+
+help:				## DEFAULT_GOAL : Display help messages from parent Makefile
+					@grep -E '(^[a-zA-Z_-]+:.*?##.*$$)|(^##)' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[32m%-20s\033[0m %s\n", $$1, $$2}' | sed -e 's/\[32m##/[33m/'
+
+.PHONY: 			help
 
 ##
 ###----------------------------------#
 ###    Project commands (Docker)     #
 ###----------------------------------#
 ##
+
+exec\:%:			## Calling Symfony console
+					$(EXEC) $* $(ARGS)
 
 build:				./docker-compose.yml ./docker-compose.override.yml.dist ## Build Docker images
 					@if [ -f ./docker-compose.override.yml ]; \
@@ -50,16 +67,3 @@ composer:			## Install vendor/
 					$(DOCKER_COMPOSE) exec -T php /usr/bin/entrypoint composer install -d ./app/ --prefer-dist --no-progress
 
 .PHONY: 			composer
-
-##
-###------------#
-###    Help    #
-###------------#
-##
-
-.DEFAULT_GOAL := 	help
-
-help:				## DEFAULT_GOAL : Display help messages from parent Makefile
-					@grep -E '(^[a-zA-Z_-]+:.*?##.*$$)|(^##)' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[32m%-20s\033[0m %s\n", $$1, $$2}' | sed -e 's/\[32m##/[33m/'
-
-.PHONY: 			help

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 $rootDir = dirname(__DIR__);
 
 if (!file_exists($rootDir.'/vendor/autoload.php')) {

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 ## Get current user according to entrypoint.sh
 
 echo '<p>Exec (whoami) : ' . exec('whoami') . '</p>';

@@ -1,10 +1,10 @@
 # Simple Docker starter using a PHP stack
-> Dockerized your web environment using PHP7.4, NGINX, COMPOSER, PHPUNIT, PHP-CS-FIXER, XDEBUG.
 
+Dockerized your web environment using PHP7.4, NGINX, COMPOSER, PHPUNIT, PHP-CS-FIXER, XDEBUG.
 
-![Software License](https://img.shields.io/badge/php-%5E7.4-brightgreen.svg)
+![Software License](https://img.shields.io/badge/php-7.4-brightgreen.svg)
 
-[![Author](https://img.shields.io/badge/author-gaetan.role--dubruille%40sensiolabs.com-blue.svg)](https://github.com/gaetanrole)
+[![Author](https://img.shields.io/badge/author-gaetan.role%40gmail.com-blue.svg)](https://github.com/gaetanrole)
 
 This repository uses official [PHP](https://hub.docker.com/_/php) and [NGINX](https://hub.docker.com/_/nginx) containers.
 
@@ -14,8 +14,8 @@ This repository uses official [PHP](https://hub.docker.com/_/php) and [NGINX](ht
 
 - [PHP-FPM 7.4](https://hub.docker.com/_/php)
 - [NGINX 1.17](https://hub.docker.com/_/nginx)
-- [Composer 1.9](https://getcomposer.org/)
-- [PHPunit 7.5](https://phpunit.de/)
+- [Composer 1.10](https://getcomposer.org/)
+- [PHPUnit 7.5](https://phpunit.de/)
 - [PHP-CS-FIXER-V2](https://github.com/FriendsOfPHP/PHP-CS-Fixer)
 - [Xdebug 2.9](https://xdebug.org/)
 
@@ -63,6 +63,7 @@ Or if you want use the project's **Makefile** :
 
 ```bash
 $ make install
+$ make exec:composer ARGS="update -d app/"
 ```
 
 > See other commands in it, such as clear, kill and so on.
@@ -157,4 +158,4 @@ And to your `docker-composer.override.yml.dist` :
 
 Do not hesitate to improve this repository, creating your PR on GitHub with a description which explains it.
 
-Ask your question on `gaetan.role-dubruille@sensiolabs.com`.
+Ask your question on `gaetan.role@gmail.com`.
