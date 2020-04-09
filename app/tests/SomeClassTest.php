@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * This class is just here to show PHPUnit remote debugging
- * @author Gaëtan Rolé-Dubruille <gaetan.role-dubruille@sensiolabs.com>
+ * @author Gaëtan Rolé-Dubruille <gaetan.role@gmail.com>
  */
 class SomeClassTest extends TestCase
 {

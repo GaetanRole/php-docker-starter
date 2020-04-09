@@ -2,12 +2,12 @@
   "name": "gaetan-role/php-docker-starter",
   "type": "project",
   "license": "proprietary",
-  "description": "A simple Docker starter kit with PHP, Nginx, Composer, PHPUnit, PHP-CS-Fixer and Xdebug, useful to show remote debugging.",
+  "description": "A simple Docker starter kit with PHP, Nginx, Composer, PHPUnit, PHP-CS-Fixer and Xdebug useful to show remote debugging.",
   "require": {
     "php": "^7.4"
   },
   "require-dev": {
-    "phpunit/phpunit": "^7.5."
+    "phpunit/phpunit": "^9.1"
   },
   "autoload": {
     "psr-4": {

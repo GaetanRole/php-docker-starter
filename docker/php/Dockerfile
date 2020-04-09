@@ -1,9 +1,10 @@
+# Install Composer and PHP
 FROM    composer:1.10 as composer
 FROM    php:7.4-fpm-alpine
 
 COPY    --from=composer /usr/bin/composer /usr/local/bin/composer
 
-LABEL   maintainer="Gaëtan Rolé-Dubruille <gaetan.role-dubruille@sensiolabs.com>"
+LABEL   maintainer="Gaëtan Rolé-Dubruille <gaetan.role@gmail.com>"
 
 # PECL
 ENV     APCU_VERSION 5.1.18
@@ -11,6 +12,7 @@ ENV     APCU_VERSION 5.1.18
 # Removing APKINDEX warnings
 RUN     rm -rf /var/cache/apk/* && \
         rm -rf /tmp/*
+
 RUN     apk update
 
 # Native libs and building dependencies
@@ -48,5 +50,5 @@ COPY    conf.d/xdebug.ini /usr/local/etc/php/conf.d
 RUN     echo "zend_extension=$(find /usr/local/lib/php/extensions/ -name xdebug.so)" >> /usr/local/etc/php/conf.d/xdebug.ini
 
 # Entrypoint
-COPY    ./bin/entrypoint.sh /usr/bin/entrypoint
-ENTRYPOINT ["/usr/bin/entrypoint"]
+COPY    ./bin/entrypoint.sh /usr/local/bin/entrypoint
+ENTRYPOINT ["/usr/local/bin/entrypoint"]

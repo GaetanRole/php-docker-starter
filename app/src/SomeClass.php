@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App;
 
 /**
- * @author Gaëtan Rolé-Dubruille <gaetan.role-dubruille@sensiolabs.com>
+ * @author Gaëtan Rolé-Dubruille <gaetan.role@gmail.com>
  */
 class SomeClass
 {

@@ -1,7 +1,7 @@
 # Makefile focusing on Docker
 
 DOCKER_COMPOSE		= docker-compose
-EXEC				= $(DOCKER_COMPOSE) exec -T php /usr/bin/entrypoint
+EXEC				= $(DOCKER_COMPOSE) exec -T php /usr/local/bin/entrypoint
 
 ##
 ###------------#
@@ -64,6 +64,6 @@ reset:				clear build ## Alias coupling clear and build rules
 ##
 
 composer:			## Install vendor/
-					$(DOCKER_COMPOSE) exec -T php /usr/bin/entrypoint composer install -d ./app/ --prefer-dist --no-progress
+					$(DOCKER_COMPOSE) exec -T php /usr/local/bin/entrypoint composer install -d ./app/ --prefer-dist --no-progress
 
 .PHONY: 			composer

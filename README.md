@@ -1,4 +1,4 @@
-# Simple Docker starter using a PHP stack
+# php-docker-starter
 
 Dockerized your web environment using PHP7.4, NGINX, COMPOSER, PHPUNIT, PHP-CS-FIXER, XDEBUG.
 
@@ -10,12 +10,12 @@ This repository uses official [PHP](https://hub.docker.com/_/php) and [NGINX](ht
 
 ## Installation instructions
 
-### Contents
+### Docker Contents
 
 - [PHP-FPM 7.4](https://hub.docker.com/_/php)
 - [NGINX 1.17](https://hub.docker.com/_/nginx)
 - [Composer 1.10](https://getcomposer.org/)
-- [PHPUnit 7.5](https://phpunit.de/)
+- [PHPUnit 9.1](https://phpunit.de/)
 - [PHP-CS-FIXER-V2](https://github.com/FriendsOfPHP/PHP-CS-Fixer)
 - [Xdebug 2.9](https://xdebug.org/)
 
@@ -41,11 +41,13 @@ app/
     public/
     src/
     tests/
+    ...
 docker/
     nginx/
     php/
 docker-compose.override.yml.dist
 docker-compose.yml
+Makefile
 README.md
 ```
 
@@ -56,14 +58,14 @@ Then let's run docker-compose :
 
 ```bash
 $ docker-compose up -d
-$ docker-compose exec -T php /usr/bin/entrypoint composer install -d /srv/app/ --prefer-dist 
+$ docker-compose exec -T php /usr/local/bin/entrypoint composer install -d /srv/app/ --prefer-dist 
 ```
 
 Or if you want use the project's **Makefile** :
 
 ```bash
 $ make install
-$ make exec:composer ARGS="update -d app/"
+$ make exec:composer ARGS="update -d /srv/app/"
 ```
 
 > See other commands in it, such as clear, kill and so on.
@@ -76,10 +78,10 @@ $ make exec:composer ARGS="update -d app/"
 
 ```bash
 # shell commands
-$ docker-compose exec php /usr/bin/entrypoint sh
+$ docker-compose exec php /usr/local/bin/entrypoint sh
 
 # Composer (e.g. composer update)
-$ docker-compose exec -T php /usr/bin/entrypoint composer update -d /srv/app
+$ docker-compose exec -T php /usr/local/bin/entrypoint composer update -d /srv/app
 
 # Retrieve an container IP Address (here for the http one with nginx container_name)
 $ docker inspect --format '{{ .NetworkSettings.Networks.dockersymfony_default.IPAddress }}' $(docker ps -f name=nginx -q)
@@ -104,8 +106,8 @@ Do not hesitate to add your `xdebug.remote_host` and configure your IDE, accordi
 _- E.g._ : 
 
 ```bash
-$ docker-compose exec -T php /usr/bin/entrypoint /srv/app/vendor/bin/phpunit --configuration /srv/app/phpunit.xml.dist /srv/app/tests 
-$ docker-compose exec -T php /usr/bin/entrypoint php-cs-fixer fix app/src/ --rules=@PSR2 
+$ docker-compose exec -T php /usr/local/bin/entrypoint /srv/app/vendor/bin/phpunit --configuration /srv/app/phpunit.xml.dist /srv/app/tests 
+$ docker-compose exec -T php /usr/local/bin/entrypoint php-cs-fixer fix app/src/ --rules=@PSR2 
 ```
 
 ## Application path
